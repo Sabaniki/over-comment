@@ -1,5 +1,6 @@
 import {nicoJS} from './nico.js'
 
+const db = firebase.firestore();
 
 let nico = new nicoJS({
     app: document.getElementById('app'),
@@ -11,7 +12,6 @@ let nico = new nicoJS({
 
 nico.listen();
 
-let comments = ["test", "hoge", "fuga", "foo", "bar"];
-
-comments.forEach(comment => nico.send(comment));
-
+db.collection("comments").onSnapshot((snapshot => {
+    snapshot.docChanges().forEach(change => nico.send(change.doc.data().text))
+}));

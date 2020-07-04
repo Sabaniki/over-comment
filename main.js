@@ -11,7 +11,8 @@ function createWindow() {
     const screenSize = electron.screen.getPrimaryDisplay().size;
     // Create the browser window.
     mainWindow = new BrowserWindow({
-        height: screenSize.height,
+        y: 200,
+        height: screenSize.height - 200,
         width: screenSize.width,
         // tslint:disable-next-line: object-literal-sort-keys
         transparent: true,

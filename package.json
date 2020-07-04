@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^9.0.5",
+    "firebase": "^7.15.5",
     "nicojs": "^1.1.8"
   }
 }
