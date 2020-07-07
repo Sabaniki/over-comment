@@ -11,8 +11,40 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electron": "^9.0.5",
     "firebase": "^7.15.5",
     "nicojs": "^1.1.8"
+  },
+  "build": {
+    "appId": "com.electron.over-comment",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "assets/",
+      "comment.js",
+      "FirebaseInit.js",
+      "index.html",
+      "main.js",
+      "nico.js",
+      "style.css",
+      "package.json",
+      "package-lock.json"
+    ],
+    "mac": {
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+    "electron-builder": "^22.7.0",
+    "electron": "^9.0.5"
   }
 }

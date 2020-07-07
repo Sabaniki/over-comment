@@ -11,15 +11,14 @@ function createWindow() {
     const screenSize = electron.screen.getPrimaryDisplay().size;
     // Create the browser window.
     mainWindow = new BrowserWindow({
-        y: 200,
-        height: screenSize.height - 200,
+        height: screenSize.height,
         width: screenSize.width,
         // tslint:disable-next-line: object-literal-sort-keys
         transparent: true,
         frame: false,
         show: true,
         resizable: false,
-        alwaysOnTop: true,
+        alwaysOnTop: false,
     });
 
     // メインウィンドウに表示するURLを指定します
