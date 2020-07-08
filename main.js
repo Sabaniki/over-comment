@@ -2,7 +2,6 @@
 const {app, BrowserWindow} = require('electron');
 const electron = require("electron");
 
-
 // メインウィンドウ
 let mainWindow;
 
@@ -17,9 +16,11 @@ function createWindow() {
         transparent: true,
         frame: false,
         show: true,
-        resizable: false,
-        alwaysOnTop: false,
+        resizable: true,
+        alwaysOnTop: true,
     });
+
+    mainWindow.setIgnoreMouseEvents(true);
 
     // メインウィンドウに表示するURLを指定します
     // （今回はmain.jsと同じディレクトリのindex.html）
